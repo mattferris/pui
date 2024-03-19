@@ -1,0 +1,33 @@
+.pui-breadcrumb {
+
+  & {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 2px 0;
+  }
+
+  .pui-breadcrumb-item, & > li {
+    display: inline-block;
+    list-style: none;
+    margin-left: 3px;
+  }
+
+  .pui-breadcrumb-item::before,
+  & > li::before {
+    content: "\203A";
+    display: inline-block;
+    padding-right: 7px;
+  }
+
+  .pui-breadcrumb-item:first-child::before,
+  & > li:first-child::before {
+    content: none;
+    padding: 0;
+  }
+
+  .pui-breadcrumb-item:first-child,
+  & > li:first-child {
+    margin-left: 0;
+  }
+
+}

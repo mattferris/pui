@@ -1,0 +1,59 @@
+.pui-modal-underlay {
+  background: rgba(0, 0, 0, 0.25);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.pui-modal-underlay.closed {
+  display: none;
+}
+
+.pui-modal {
+
+  & {
+    @extend .pui-tile;
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 33.3%;
+  }
+
+  header:first-child nav {
+
+    & {
+      display: flex;
+      order: 3;
+    }
+
+    button {
+      background: 0;
+      border: 0;
+      color: inherit;
+      cursor: pointer;
+      font-size: inherit;
+      padding: calc(var(--pui-margin) / 2);
+      margin: calc(var(--pui-margin) / 2 * -1);
+    }
+
+  }
+
+  footer:last-child {
+    border-top: solid 1px #ddd;
+    display: flex;
+    gap: var(--pui-margin);
+    justify-content: flex-end;
+    margin-bottom: calc(var(--pui-margin) * -1);
+    margin-left: calc(var(--pui-margin) * -1);
+    margin-right: calc(var(--pui-margin) * -1);
+    margin-top: var(--pui-margin);
+    padding: var(--pui-margin);
+  }
+
+}

@@ -1,0 +1,70 @@
+.pui-tile {
+
+  & {
+    border-radius: var(--pui-corner-radius);
+    border: var(--pui-light-border);
+    box-sizing: border-box;
+    color: inherit;
+    display: block;
+    margin-top: var(--pui-margin);
+    overflow: hidden;
+    padding: 20px;
+    text-decoration: none;
+  }
+
+  &.pui-tile-compact {
+    padding: 10px;
+  }
+
+  header:first-child {
+    border-bottom: solid var(--pui-light-grey) 1px;
+    display: flex;
+    gap: 20px;
+    margin-left: calc(var(--pui-margin) * -1);
+    margin-right: calc(var(--pui-margin) * -1);
+    margin-top: calc(var(--pui-margin) * -1);
+    padding: 20px;
+  }
+
+  header > [class^="pui-icon-"],
+  header > .pui-icon {
+    display: block;
+    flex: 0;
+    font-size: 1.8rem;
+    margin-bottom: -3px;
+    margin-right: -3px;
+    margin-top: -3px;
+    order: 1;
+  }
+
+  header > h1 {
+    flex: 2;
+    margin: 0;
+    order: 2;
+  }
+
+  & > h1,
+  header > h1 {
+    font-size: 1.25rem;
+  }
+
+  p:first-child,
+  h1:first-child,
+  h2:first-child,
+  h3:first-child {
+    margin-bottom: 0;
+  }
+
+  p:first-child,
+  h1:first-child,
+  h2:first-child,
+  h3:first-child {
+    margin-top: 0;
+  }
+
+}
+
+.pui-row > .pui-tile,
+[class^="pui-col"] > .pui-tile {
+  margin-top: 0;
+}

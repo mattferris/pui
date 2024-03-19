@@ -1,0 +1,66 @@
+.pui-codeblock {
+
+  & {
+    background-color: var(--pui-ed-background);
+    border-radius: var(--pui-corner-radius);
+    color: var(--pui-ed-foreground);
+    font-family: monospace;
+    font-size: 0.9rem;
+    padding: 20px 12px 12px 20px;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  & .pui-codeblock-lang {
+    border: solid var(--pui-ed-foreground) 1px;
+    border-radius: calc( var(--pui-corner-radius) / 2);
+    color: var(--pui-ed-foreground);
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 3px 3px 1px 3px;
+    position: absolute;
+    right: 10px;
+    text-transform: uppercase;
+    top: 10px;
+  }
+
+  & pre {
+    margin: 0;
+    padding: 0;
+  }
+
+  & pre code {
+
+    & {
+      background: none;
+      max-height: 33.3vh;
+      line-height: 1.5rem;
+      overflow: scroll;
+      padding: 0 8px 8px 0;
+      white-space: pre;
+    }
+
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-corner {
+      display: none;
+    }
+
+    &::-webkit-scrollbar { width: 4px; }
+    &::-webkit-scrollbar:hover { width: 8px; }
+
+    &::-webkit-scrollbar:horizontal { height: 4px; }
+    &::-webkit-scrollbar:horizontal:hover { height: 8px; }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(192, 192, 192, 0.5);
+      border-radius: 4px;
+    }
+
+  }
+
+  &:hover pre code::-webkit-scrollbar,
+  &:hover pre code::-webkit-scrollbar:horizontal {
+    display: block;
+  }
+
+}

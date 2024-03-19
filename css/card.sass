@@ -1,0 +1,41 @@
+.pui-card, figure.pui-card {
+
+  & {
+    @extend .pui-tile;
+    padding: 0;
+  }
+
+  .pui-card-figure {
+    background: var(--pui-media-background);
+    position: relative;
+    text-align: center;
+  }
+
+  .pui-card-figure img, img {
+    display: block;
+    margin: auto;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: stretch;
+  }
+
+  .pui-card-description, figcaption {
+
+    & {
+      border-top: var(--pui-light-border);
+      padding: var(--pui-margin);
+    }
+
+  }
+
+  &.pui-card-compact .pui-card-description,
+  &.pui-card-compact figcaption {
+    @extend .pui-tile.pui-tile-compact;
+  }
+
+}
+
+.pui-row > .pui-card,
+[class^="pui-col"] > .pui-card {
+  margin-top: 0;
+}

@@ -1,0 +1,60 @@
+.pui-prenex {
+
+  & {
+    @extend .pui-button;
+    display: flex;
+    font-size: 1rem;
+    padding: 10px;
+    text-transform: none;
+  }
+
+  &.pui-prenex-next {
+    & { text-align: left; }
+    & .pui-prenex-arrow { order: 2; }
+    & .pui-prenex-arrow::before { content: "\203A"; }
+    & .pui-prenex-content { order: 1; }
+  }
+
+  &.pui-prenex-prev {
+
+    & {
+      background: var(--pui-cta-foreground);
+      color: var(--pui-cta-background);
+      text-align: right;
+    }
+
+    & .pui-prenex-arrow { order: 1; }
+    & .pui-prenex-arrow::before { content: "\2039"; }
+    & .pui-prenex-content { order: 2; }
+
+  }
+
+  .pui-prenex-arrow::before {
+    font-size: 2rem;
+    flex: 1;
+    line-height: 1;
+  }
+
+  .pui-prenex-content {
+
+    & {
+      flex: 2;
+      letter-spacing: -0.03em;
+    }
+
+    .pui-prenex-parent {
+      font-size: 0.8rem;
+      font-weight: 300;
+      line-height: 1rem;
+      padding-top: 3px;
+    }
+
+    .pui-prenex-sibling {
+      font-weight: 700;
+      line-height: 1.1rem;
+      padding-top:5px;
+    }
+
+  }
+
+}
