@@ -11,7 +11,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: fit-content;
   }
 
   ul > li > ul {
@@ -101,7 +101,8 @@
     display: none;
   }
 
-  &.pui-navmenu-collapsed {
+  &.pui-navmenu-collapsed,
+  &.pui-navmenu-collapsible {
     width: fit-content; 
   }
 
@@ -290,12 +291,15 @@
 }
 
 @media (max-width: 560px) {
-  .pui-navmenu.pui-navmenu-collapsed > .pui-navmenu-toggle > ul {
-    width: 100%;
+  .pui-navmenu.pui-navmenu-collapsed > .pui-navmenu-toggle > ul,
+  .pui-navmenu.pui-navmenu-collapsed > .pui-navmenu-toggle > ul > li,
+  .pui-navmenu.pui-navmenu-collapsible > .pui-navmenu-toggle > ul,
+  .pui-navmenu.pui-navmenu-collapsible > .pui-navmenu-toggle > ul > li, {
+    width: 100% !important;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .pui-navmenu.pui-navmenu-collapsible > .pui-navmenu-toggle {
 
     & {
@@ -306,18 +310,21 @@
       width: max-content;
     }
 
+    &.pui-navmenu-right > ul {
+      left: unset;
+    }
+
     & > a:first-child {
       display: block;
     }
 
     & > ul {
       background: var(--pui-cta-background);
-      border-top-left-radius: 0;
       display: none; 
       left: 0;
       padding: 10px;
       position: absolute;
-      width: unset;
+      /*width: unset;*/
       z-index: 9999;
     }
 
@@ -377,22 +384,22 @@
 
   }
 
-.pui-navmenu.pui-navmenu-collapsible > .pui-navmenu-toggle .pui-navmenu-search {
+  .pui-navmenu.pui-navmenu-collapsible > .pui-navmenu-toggle .pui-navmenu-search {
 
-  &:hover {
-    background: var(--pui-cta-background);
+    &:hover {
+      background: var(--pui-cta-background);
+    }
+
+    & > form {
+      border-color: var(--pui-cta-foreground);
+    }
+
+    & > form input[type="search"],
+    & > form input[role="searchbox"],
+    & > form button {
+      color: var(--pui-cta-foreground);
+    }
+
   }
-
-  & > form {
-    border-color: var(--pui-cta-foreground);
-  }
-
-  & > form input[type="search"],
-  & > form input[role="searchbox"],
-  & > form button {
-    color: var(--pui-cta-foreground);
-  }
-
-}
 
 }

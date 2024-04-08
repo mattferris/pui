@@ -1,0 +1,41 @@
+.pui-menu {
+
+  & {
+    padding: 0;
+  }
+
+  & > li {
+    list-style: none;
+  }
+
+  & > li .pui-button {
+    padding-right: 45px;
+    position: relative;
+    text-align: left;
+  }
+
+  .pui-menu-arrow {
+    @extend .pui-icon-arrow-right;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}
+
+.pui-menu-button {
+  @extend .pui-button;
+  padding-right: 45px;
+  position: relative;
+  text-align: left;
+}
+
+.pui-menu-button [class^="pui-icon-"] {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

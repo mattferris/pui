@@ -26,11 +26,37 @@
       padding: var(--pui-margin);
     }
 
+    h1 {
+      font-size: 1.25rem;
+    }
+
   }
 
   &.pui-card-compact .pui-card-description,
   &.pui-card-compact figcaption {
     @extend .pui-tile.pui-tile-compact;
+  }
+
+  &.pui-card-fit {
+
+    .pui-card-figure {
+      overflow: hidden;
+      padding-top: 56.25%;
+      position: relative;
+    }
+
+    .pui-card-figure img {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 100%;
+    }
+
+  }
+
+  &.pui-tile-dialog {
+    padding-bottom: 60px; 
   }
 
 }

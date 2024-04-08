@@ -16,6 +16,11 @@
     padding: 10px;
   }
 
+  &.pui-tile-opaque {
+    background-color: #fff;
+    border: none;
+  }
+
   header:first-child {
     border-bottom: solid var(--pui-light-grey) 1px;
     display: flex;
@@ -49,6 +54,8 @@
   }
 
   p:first-child,
+  p:last-child,
+  ul:last-child,
   h1:first-child,
   h2:first-child,
   h3:first-child {
@@ -56,6 +63,7 @@
   }
 
   p:first-child,
+  ul:first-child,
   h1:first-child,
   h2:first-child,
   h3:first-child {
@@ -64,7 +72,31 @@
 
 }
 
+.pui-tile-dialog {
+
+  & {
+    padding-bottom: 80px;
+    position: relative;
+  }
+
+  .pui-buttonlist {
+    bottom: 20px;
+    position: absolute;
+    width: calc(100% - (var(--pui-margin) * 2));
+  }
+
+}
+
 .pui-row > .pui-tile,
 [class^="pui-col"] > .pui-tile {
   margin-top: 0;
+}
+
+.pui-tilelist {
+  display: flex;
+  gap: 20px;
+}
+
+.pui-tilelist .pui-tile {
+  flex: 1;
 }
