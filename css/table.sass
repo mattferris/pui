@@ -1,0 +1,143 @@
+.pui-table {
+
+  & {
+    border: solid var(--pui-light-grey) 1px;
+    border-spacing: 0;
+    border-radius: var(--pui-corner-radius); 
+    margin: var(--pui-margin) auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  caption {
+    caption-side: bottom;
+    font-size: 0.85em;
+    padding-top: calc(var(--pui-margin) / 2);
+  }
+
+  thead td,
+  thead th {
+    border-bottom: solid var(--pui-light-grey) 1px;
+    font-weight: 700;
+  }
+
+  tfoot td,
+  tfoot th {
+    border-top: solid var(--pui-light-grey) 1px;
+  }
+
+  th {
+    font-weight: 300;
+    text-align: left;
+  }
+
+  td,
+  th {
+    padding: var(--pui-margin);
+  }
+
+  td.pui-table-numeric,
+  th.pui-table-numeric {
+    text-align: right;
+  }
+
+  &.pui-table-opaque {
+    background: #fff;
+    border: none;
+  }
+
+  &.pui-table-grid-rows {
+
+    th, td {
+      border-bottom: solid var(--pui-light-grey) 1px;
+    }
+
+    tr:last-child td,
+    tr:last-child th {
+      border-bottom: none;
+    }
+
+  }
+
+  &.pui-table-grid-cols {
+
+    td,
+    th {
+      border-right: solid var(--pui-light-grey) 1px;
+    }
+
+    td:last-child,
+    th:last-child {
+      border-right: none;
+    }
+
+  }
+
+  &.pui-table-grid {
+    @extend .pui-table-grid-cols, .pui-table-grid-rows;
+  }
+
+  &.pui-table-striped {
+
+    tr:nth-child(even) td,
+    tr:nth-child(even) th {
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+
+  }
+
+  &.pui-table-comparison {
+
+    & {
+      table-layout: fixed;
+    }
+
+    [class^="pui-icon"] {
+      color: var(--pui-dark-green);
+      font-size: 1.25em;
+    }
+
+    thead > tr > td:first-child,
+    tfoot > tr > td:first-child {
+      background-color: rgba(0, 0, 0, 0.09);
+    }
+
+    th, td {
+      text-align: center;
+    }
+
+    th:first-child,
+    td:first-child {
+      text-align: left;
+    }
+
+    tr.pui-table-rth {
+      & {
+        background-color: rgba(0, 0, 0, 0.06);
+        display: none;
+      }
+      th {
+        text-align: center;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 900px) {
+  .pui-table.pui-table-comparison {
+
+    tr.pui-table-rth {
+      display: table-row;
+    }
+
+    thead td:first-child,
+    tfoot td:first-child,
+    tbody td:first-child,
+    tbody tr th:first-child[scope="row"] {
+      display: none;
+    }
+
+ }
+}

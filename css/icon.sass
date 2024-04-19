@@ -2,13 +2,12 @@ i[class^="pui-icon-"] {
   font-style: normal;
 }
 
-.pui-icon-wheelchair::before {
-  content: "\267F"; 
+.pui-icon-accessibility {
+  @extend .pui-icon-notice, .ph-duotone, .ph-person-arms-spread;
 }
 
-.pui-icon-notice {
-  @extend .ph-duotone, .ph-lightbulb;
-  color: var(--teal);
+.pui-icon-account {
+  @extend .ph-duotone, .ph-user-circle;
 }
 
 .pui-icon-alert {
@@ -16,17 +15,8 @@ i[class^="pui-icon-"] {
   color: var(--orange);
 }
 
-.pui-icon-warning {
-  @extend .ph-duotone, .ph-warning;
-  color: var(--red);
-}
-
-.pui-icon-accessibility {
-  @extend .pui-icon-notice, .ph-duotone, .ph-person-arms-spread;
-}
-
-.pui-icon-account {
-  @extend .ph-duotone, .ph-user-circle;
+.pui-icon-arrow-right {
+  @extend .ph, .ph-arrow-circle-right;
 }
 
 .pui-icon-caret-down {
@@ -37,14 +27,40 @@ i[class^="pui-icon-"] {
   @extend .ph-bold, .ph-caret-up;
 }
 
+.pui-icon-certificate {
+  @extend .ph, .ph-certificate;
+}
+
+.pui-icon-checkmark {
+  @extend .ph-fill, .ph-check-fat;
+}
+
+.pui-icon-film-slate {
+  @extend .ph, .ph-film-slate;
+}
+
 .pui-icon-menu {
   @extend .ph-bold, .ph-list;
+}
+
+.pui-icon-monitor-play {
+  @extend .ph, .ph-monitor-play;
+}
+
+.pui-icon-notice {
+  @extend .ph-duotone, .ph-lightbulb;
+  color: var(--teal);
+}
+
+.pui-icon-warning {
+  @extend .ph-duotone, .ph-warning;
+  color: var(--red);
 }
 
 .pui-icon-search {
   @extend .ph-bold, .ph-magnifying-glass;
 }
 
-.pui-icon-arrow-right {
-  @extend .ph, .ph-arrow-circle-right;
+.pui-icon-wheelchair::before {
+  content: "\267F"; 
 }
