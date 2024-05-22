@@ -1,5 +1,7 @@
 grid.sass
 form.sass
+figure.sass
+table.sass
 breadcrumb.sass
 button.sass
 tile.sass
@@ -8,7 +10,9 @@ codeblock.sass
 extras.sass
 icon.sass
 prenex.sass
+profile.sass
 modal.sass
 navmenu.sass
 menu.sass
-table.sass
+a11y.sass
+tooltip.sass
