@@ -1,11 +1,9 @@
 .pui-table {
 
   & {
-    border: solid var(--pui-light-grey) 1px;
+    border-radius: var(--pui-corner-radius);
     border-spacing: 0;
-    border-radius: var(--pui-corner-radius); 
     margin: var(--pui-margin) auto;
-    overflow: hidden;
     position: relative;
     width: 100%;
   }
@@ -16,14 +14,50 @@
     padding-top: calc(var(--pui-margin) / 2);
   }
 
-  thead td,
-  thead th {
+  thead :is(td, th) {
     border-bottom: solid var(--pui-light-grey) 1px;
     font-weight: 700;
   }
 
-  tfoot td,
-  tfoot th {
+  thead > tr:first-child :is(td, th),
+  :not(:has(> thead)) > tbody > tr:first-child :is(td, th) {
+    border-top: solid var(--pui-light-grey) 1px;
+  } 
+
+  tfoot > tr:last-child :is(td, th),
+  &:not(:has(> tfoot)) tbody > tr:last-child :is(td, th) {
+    border-bottom: solid var(--pui-light-grey) 1px;
+  }
+
+  :is(thead, tbody, tfoot) > tr > :first-child {
+    border-left: solid var(--pui-light-grey) 1px;
+  }
+
+  :is(thead, tbody, tfoot) > tr > :last-child {
+    border-right: solid var(--pui-light-grey) 1px;
+  }
+
+  thead > tr:first-child > :first-child,
+  &:not(:has(> thead)) tbody > tr:first-child > :first-child {
+    border-top-left-radius: var(--pui-corner-radius);
+  }
+
+  thead > tr:first-child > :last-child,
+  &:not(:has(> thead)) tbody > tr:first-child > :last-child {
+    border-top-right-radius: var(--pui-corner-radius);
+  }
+
+  tfoot > tr:last-child > :last-child,
+  &:not(:has(> tfoot)) tbody > tr:last-child > :last-child {
+    border-bottom-right-radius: var(--pui-corner-radius);
+  }
+
+  tfoot > tr:last-child > :first-child,
+  &:not(:has(> tfoot)) tbody > tr:last-child > :first-child {
+    border-bottom-left-radius: var(--pui-corner-radius);
+  }
+
+  tfoot :is(td,th) {
     border-top: solid var(--pui-light-grey) 1px;
   }
 
@@ -32,8 +66,11 @@
     text-align: left;
   }
 
-  td,
-  th {
+  th [class^=".pui-icon"] {
+    font-size: 0.9em;
+  }
+
+  td, th {
     padding: var(--pui-margin);
   }
 
@@ -93,7 +130,7 @@
       table-layout: fixed;
     }
 
-    [class^="pui-icon"] {
+    td [class^="pui-icon"] {
       color: var(--pui-dark-green);
       font-size: 1.25em;
     }
