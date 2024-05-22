@@ -49,9 +49,9 @@
     position: relative;
   }
 
-  & > ul > li:hover,
+  & > ul > li:is(:hover, :focus-visible, :focus-within, :active),
   & > ul > li.active,
-  & > .pui-navmenu-toggle > ul > li:hover,
+  & > .pui-navmenu-toggle > ul > li:is(:hover, :focus-visible, :focus-within, :active),
   & > .pui-navmenu-toggle > ul > li.active {
     background: var(--pui-cta-background);
     border-radius: var(--pui-corner-radius);
@@ -74,9 +74,9 @@
     z-index: 9999;
   }
 
-  & > ul > li:hover > ul,
+  & > ul > li:is(:hover, :focus-visible, :focus-within, :active) > ul,
   & > ul > li.active > ul,
-  & > .pui-navmenu-toggle > ul > li:hover > ul,
+  & > .pui-navmenu-toggle > ul > li:is(:hover, :focus-visible, :focus-within, :active) > ul,
   & > .pui-navmenu-toggle > ul > li.active > ul {
     display: block;
   }
@@ -169,7 +169,7 @@
       line-height: 1em;
     }
 
-    &:hover,
+    &:is(:hover, :focus-visible, :focus-within, :active),
     &.active {
       background: var(--pui-cta-background);
       border-bottom-left-radius: 0;
@@ -197,7 +197,7 @@
 
   & .pui-navmenu-search {
 
-    &:hover {
+    &:is(:hover, :focus-visible, :focus-within, :active) {
       background: var(--pui-cta-foreground) !important;
       border: none;
       margin: 0;
@@ -213,7 +213,9 @@
     }
 
     & > form input[type="search"],
-    & > form input[role="searchbox"] {
+    & > form input[type="search"]:focus-visible,
+    & > form input[role="searchbox"],
+    & > form input[role="searchbox"]:focus-visible {
       background: none;
       border: none;
       box-sizing: border-box;
@@ -239,8 +241,8 @@
       vertical-align: middle;
     }
 
-    & > form input[type="search"]:focus + button,
-    & > form input[role="searchbox"]:focus + button,
+    & > form input[type="search"]:focus-visible + button,
+    & > form input[role="searchbox"]:focus-visible + button,
     & > form input:valid + button {
       display: none;
     }
@@ -252,7 +254,7 @@
 .pui-navmenu-solid .pui-navmenu-search,
 .pui-navmenu.pui-navmenu-collapsed > .pui-navmenu-toggle .pui-navmenu-search {
 
-  &:hover {
+  &:is(:hover, :focus-visible, :focus-within, :active) {
     background: var(--pui-cta-background) !important;
   }
 
@@ -365,7 +367,7 @@
       line-height: 1em;
     }
 
-    &:hover,
+    &:is(:hover, :focus-visible, :focus-within, :active),
     &.active {
       background: var(--pui-cta-background);
       border-bottom-left-radius: 0;
@@ -373,7 +375,7 @@
       color: var(--pui-cta-foreground);
     }
 
-    &:hover > ul,
+    &:is(:hover, :focus-visible, :focus-within, :active) > ul,
     &.active > ul {
       display: block;
     }
@@ -386,7 +388,7 @@
 
   .pui-navmenu.pui-navmenu-collapsible > .pui-navmenu-toggle .pui-navmenu-search {
 
-    &:hover {
+    &:is(:hover, :focus-visible, :focus-within, :active) {
       background: var(--pui-cta-background);
     }
 
